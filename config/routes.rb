@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :courses, only: [:index, :show]
+  post '/courses', to: 'courses#add'
+  get '/info', to: 'courses#info'
 
   # root 'courses#index'
 

@@ -1,0 +1,20 @@
+<h1>All Courses</h1>
+
+
+<h4>Courses Total #: <%= @courses.size %></h4>
+
+<hr>
+
+<p>Possible Schedule</p>
+<ul>
+  <% schedule.each do |course_name| %>
+    <li><%= course_name %></li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= form_tag({controller: 'courses', action: 'add', method: 'post'}) do %>
+  <input name="course_name">
+  <input type="submit" value="add to schedule">
+<% end %>

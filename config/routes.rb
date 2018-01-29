@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
   resources :courses, only: [:index, :show]
 
-  root 'courses#index'
+  # root 'courses#index'
 
-  post '/', to: 'courses#add'
+  # post '/', to: 'courses#add'
 
-  get '/login', to: 'sessions#index', as: 'login'
+  # get '/login', to: 'sessions#index', as: 'login'
+  # post '/login', to: 'sessions#create'
 
-  post '/login', to: 'sessions#create'
+  # get '/user', to: 'sessions#show', as: 'user'
+  # post '/show', to: 'sessions#destroy', as: 'logout'
 
-  get '/user', to: 'sessions#show', as: 'user'
-  post '/show', to: 'sessions#destroy', as: 'logout'
+  root 'application#hello'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
 end

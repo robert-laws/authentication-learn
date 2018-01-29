@@ -1,21 +1,19 @@
 class SessionsController < ApplicationController
-  def index
-  end
-
-  def show
-    @user = session[:username] ||= "not logged in..."
-  end
-
   def new
+
   end
 
   def create
-    session[:username] = params[:username]
-    redirect_to '/user'
+    if params[:name] == '' || params[:name].nil?
+      redirect_to '/login'
+    else
+      session[:name] = params[:name]
+      redirect_to '/'
+    end
   end
 
   def destroy
-    session.delete :username
-    redirect_to '/user'
+    session.delete :name
+    redirect_to '/login'
   end
 end

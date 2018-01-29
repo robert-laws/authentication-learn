@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
   def schedule
     session[:schedule] ||= []
   end
+
+  def hello
+
+  end
 end

@@ -13,8 +13,13 @@ Rails.application.routes.draw do
   # get '/user', to: 'sessions#show', as: 'user'
   # post '/show', to: 'sessions#destroy', as: 'logout'
 
-  root 'application#hello'
+  # root 'application#hello'
+
+  root 'welcome#home'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
+
+  resources :users, only: [:new, :create]
 end

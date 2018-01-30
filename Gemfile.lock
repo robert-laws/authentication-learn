@@ -83,7 +83,7 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     nio4r (2.2.0)
-    nokogiri (1.8.1-x64-mingw32)
+    nokogiri (1.8.2-x64-mingw32)
       mini_portile2 (~> 2.3.0)
     public_suffix (3.0.1)
     puma (3.11.2)
@@ -167,6 +167,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  bcrypt
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
